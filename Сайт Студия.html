@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Сайт Студия: кардар чакырган сайттар</title>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0908; --ink:#ece6d8; --muted:#a8a294; --gold1:#f1d59a; --gold2:#c19a52; --gold3:#7d5f2c; --line:rgba(193,154,82,.35); --card:#12100d;
+  --gold:linear-gradient(180deg,var(--gold1),var(--gold2) 55%,var(--gold3));
+  color-scheme:dark; box-sizing:border-box;
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Montserrat,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+.gt{font-family:Italiana,Georgia,serif;font-weight:400;background:var(--gold);-webkit-background-clip:text;background-clip:text;color:transparent;text-transform:uppercase}
+.wrap{max-width:980px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(10,9,8,.94);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;gap:18px;max-width:980px;margin:0 auto;padding:10px 22px}
+.logo{font-size:1.35rem;white-space:nowrap;text-decoration:none;letter-spacing:.06em}
+nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1}
+nav::-webkit-scrollbar{display:none}
+nav a{color:var(--muted);text-decoration:none;font-size:.8rem;padding:7px 12px;border-radius:99px;white-space:nowrap;border:1px solid transparent}
+nav a.on{color:var(--gold1);border-color:var(--gold2)}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--gold1);outline-offset:3px}
+.page{display:none;animation:in .35s ease}
+.page.on{display:block}
+@keyframes in{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.page{animation:none}}
+.hero{position:relative;padding:34px 0 64px;text-align:center;overflow:hidden;background:radial-gradient(ellipse at 50% 40%,rgba(193,154,82,.16),transparent 62%)}
+.shards{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.shards polygon{fill:rgba(255,255,255,.04);stroke:rgba(255,255,255,.5);stroke-width:1}
+.stage{display:grid;gap:6px;justify-items:center;align-items:center;position:relative}
+@media(min-width:760px){.stage{grid-template-columns:1fr 280px 1fr}}
+.big{font-size:clamp(3.3rem,15vw,6.8rem);line-height:.95}
+.browser{width:min(280px,80%);border:1px solid var(--gold2);background:#0e0c09;border-radius:10px;box-shadow:0 0 60px rgba(193,154,82,.35)}
+.browser .bar{display:flex;gap:5px;padding:9px 12px;border-bottom:1px solid var(--line)}
+.browser .bar i{width:8px;height:8px;border-radius:50%;background:var(--gold2)}
+.scr{padding:16px}
+.scr b{display:block;height:13px;width:68%;background:var(--gold);margin-bottom:9px;border-radius:2px}
+.scr s{display:block;height:6px;background:rgba(236,230,216,.18);margin-bottom:6px;border-radius:3px}
+.scr s.w{width:55%}
+.scr em{display:block;height:20px;width:76px;background:var(--gold);border-radius:3px;margin:10px 0 12px}
+.scr div{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.scr div u{height:40px;border:1px solid var(--line);border-radius:4px}
+h1.tag{font-size:clamp(1.25rem,4.4vw,1.9rem);font-weight:500;line-height:1.35;margin:34px auto 14px;max-width:24em}
+.lead{color:var(--muted);max-width:34em;margin:0 auto 26px;font-size:.98rem}
+.btn{display:inline-block;padding:15px 36px;background:linear-gradient(180deg,#f3dba5,#c19a52 50%,#8a6a30);color:#17110a;font-weight:600;text-decoration:none;letter-spacing:.1em;font-size:.8rem;text-transform:uppercase;border-radius:3px;box-shadow:0 0 28px rgba(193,154,82,.3),inset 0 1px 0 rgba(255,255,255,.5)}
+.btn.o{background:transparent;color:var(--gold1);border:1px solid var(--gold2);box-shadow:none}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+section{padding:56px 0}
+h2.sec{font-size:clamp(2rem,7vw,3rem);line-height:1.08;margin:0 0 12px;text-align:center}
+.intro{text-align:center;color:var(--muted);max-width:36em;margin:0 auto 34px}
+.g3{display:grid;gap:16px}
+@media(min-width:760px){.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}}
+.g2{display:grid;gap:16px}
+.card{background:var(--card);border:1px solid var(--line);padding:26px 22px}
+.card.pop{border-color:var(--gold2);box-shadow:0 0 40px rgba(193,154,82,.18)}
+.card h3{font-size:1.6rem;margin:0 0 8px}
+.card p{font-size:.9rem;color:var(--muted);margin:0 0 10px}
+.card ul{margin:10px 0 0;padding:0;list-style:none;font-size:.88rem}
+.card li{padding:6px 0 6px 20px;border-top:1px solid rgba(193,154,82,.15);position:relative}
+.card li::before{content:"";position:absolute;left:2px;top:15px;width:7px;height:7px;background:var(--gold2);transform:rotate(45deg)}
+.price{font-size:1.8rem;font-weight:500;color:var(--gold1);margin:6px 0 12px}
+.price small{font-size:.8rem;color:var(--muted);font-weight:400}
+.strip{display:grid;gap:14px;margin-top:10px}
+@media(min-width:760px){.strip{grid-template-columns:repeat(3,1fr)}}
+.pt{padding-left:16px;border-left:1px solid var(--gold2);font-size:.92rem}
+.pt b{display:block;color:var(--gold1);font-weight:600;margin-bottom:2px}
+.pt span{color:var(--muted)}
+.mini{height:150px;border:1px solid var(--line);border-radius:6px;margin-bottom:14px;padding:12px;background:#0e0c09;position:relative;overflow:hidden}
+.mini::before{content:"";display:block;height:8px;width:40%;background:var(--gold);border-radius:2px;margin-bottom:8px}
+.mini::after{content:"";display:block;height:5px;width:70%;background:rgba(236,230,216,.18);border-radius:3px;box-shadow:0 9px 0 rgba(236,230,216,.12)}
+.mini i{position:absolute;left:12px;right:12px;bottom:12px;height:56px;border-radius:4px;background:linear-gradient(135deg,rgba(193,154,82,.5),rgba(193,154,82,.08));border:1px solid var(--line)}
+.mini.b i{background:linear-gradient(135deg,rgba(236,230,216,.3),rgba(193,154,82,.08))}
+.mini.c i{background:radial-gradient(circle at 70% 30%,rgba(193,154,82,.6),rgba(193,154,82,.05))}
+.steps{list-style:none;padding:0;margin:0;display:grid;gap:14px;counter-reset:s}
+.steps li{counter-increment:s;display:flex;gap:18px;background:var(--card);border:1px solid var(--line);padding:20px}
+.steps li::before{content:counter(s);flex:none;width:38px;height:38px;border-radius:50%;border:1px solid var(--gold2);display:grid;place-items:center;font-family:Italiana,serif;font-size:1.3rem;color:var(--gold1)}
+.steps b{display:block;color:var(--gold1);font-weight:600}
+.steps span{color:var(--muted);font-size:.92rem}
+details{background:var(--card);border:1px solid var(--line);margin-bottom:12px}
+summary{cursor:pointer;padding:18px 22px;font-weight:500;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold1);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"−"}
+details p{margin:0;padding:0 22px 20px;color:var(--muted);font-size:.93rem}
+.note{color:var(--muted);font-size:.82rem;text-align:center;margin-top:18px}
+.contact{text-align:center}
+.links{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.links a{color:var(--gold1);text-underline-offset:5px}
+.write{max-width:26em;margin:30px auto 0;text-align:left}
+footer{text-align:center;padding:30px 22px 46px;color:var(--muted);font-size:.78rem;letter-spacing:.14em;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<header>
+  <div class="hd">
+    <a class="logo gt" href="#bashky">Сайт Студия</a>
+    <nav id="nav">
+      <a href="#bashky">Башкы</a><a href="#kyzmat">Кызматтар</a><a href="#ishter">Иштер</a><a href="#baa">Баалар</a><a href="#kadam">Кадамдар</a><a href="#suroo">Суроолор</a><a href="#bayla">Байланыш</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- 1 -->
+<div class="page" id="p-bashky">
+  <div class="hero">
+    <svg class="shards" viewBox="0 0 400 600" preserveAspectRatio="none" aria-hidden="true"><polygon points="20,40 150,10 70,110"/><polygon points="360,230 400,200 395,300"/><polygon points="300,470 390,430 345,520"/><polygon points="0,330 60,300 40,380"/></svg>
+    <div class="wrap">
+      <div class="stage">
+        <div class="gt big">Сайт</div>
+        <div class="browser" aria-hidden="true"><div class="bar"><i></i><i></i><i></i></div><div class="scr"><b></b><s></s><s class="w"></s><em></em><div><u></u><u></u><u></u></div></div></div>
+        <div class="gt big">Студия</div>
+      </div>
+      <h1 class="tag">Сайтыңыз жок болсо, кардарыңыз атаандашыңызга барат</h1>
+      <p class="lead">Биз 3 күндөн баштап телефондо жакшы көрүнгөн, кардар чакырган сайт жасайбыз. Баасы алдын ала айтылат, жашыруун төлөм жок.</p>
+      <div class="cta"><a class="btn" href="#bayla">Акысыз кеңеш алуу</a><a class="btn o" href="#ishter">Иштерди көрүү</a></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <section>
+      <h2 class="gt sec">Сайт сизге эмне берет</h2>
+      <p class="intro">Көпчүлүк адам азыр кандайдыр бир нерсе керек болсо, алгач телефондон издейт. Ошол учурда сиз көрүнүп турушуңуз керек.</p>
+      <div class="strip">
+        <div class="pt"><b>Кардар сизди табат</b><span>Адамдар "кайдан алсам болот" деп издегенде сиздин атыңыз чыгат.</span></div>
+        <div class="pt"><b>Сайт түнү да иштейт</b><span>Сиз уктап жатканда да баасын, сүрөттөрүн жана байланышты көрсөтөт.</span></div>
+        <div class="pt"><b>Бир басуу менен жазат</b><span>Кардар WhatsApp же телефон баскычын басат да, түз сизге жетет.</span></div>
+      </div>
+    </section>
+    <section>
+      <h2 class="gt sec">Эмне үчүн бизди тандашат</h2>
+      <div class="g2" style="margin-top:26px">
+        <div class="card"><h3 class="gt">Түшүнүктүү баа</h3><p>Баштоодон мурун канча төлөөрүңүздү жана качан даяр болорун билесиз.</p></div>
+        <div class="card"><h3 class="gt">Тез иштейбиз</h3><p>Кичи сайт үчүн 3 күн, бизнес сайт үчүн 7 күн. Узакка созбойбуз.</p></div>
+        <div class="card"><h3 class="gt">Түшүнүктүү тилде</h3><p>Татаал сөздөр жок. Эмне кылып жатканыбызды жөнөкөй түшүндүрөбүз.</p></div>
+        <div class="card"><h3 class="gt">Даяр болгондон кийин</h3><p>Сайт чыккандан кийин өзүңүз кантип жаңыртууну көрсөтүп беребиз.</p></div>
+      </div>
+    </section>
+    <section style="text-align:center"><h2 class="gt sec">Баштоого даярсызбы?</h2><p class="intro">Бизнесиңиз жөнүндө эки сөз жазыңыз, ошол күнү жооп беребиз.</p><a class="btn" href="#bayla">Жазуу</a></section>
+  </div>
+</div>
+
+<!-- 2 -->
+<div class="page" id="p-kyzmat"><div class="wrap"><section>
+  <h2 class="gt sec">Кызматтар</h2>
+  <p class="intro">Бизнесиңизге кандай сайт керек экенин билбесеңиз, сиз үчүн тандап беребиз.</p>
+  <div class="g3">
+    <div class="card"><h3 class="gt">Визитка сайт</h3><p>Бир баракта бардыгы: сиз ким экениңиз, эмне кылаарыңыз жана кантип байланышаарыңыз.</p><ul><li>Жеке ишкерлер үчүн</li><li>Устаттар жана кызматтар</li><li>Тез жана жеткиликтүү</li></ul></div>
+    <div class="card pop"><h3 class="gt">Бизнес сайт</h3><p>Бир нече барак: кызматтар, баалар, сүрөттөр, карта жана байланыш.</p><ul><li>Кафе, салон, студия</li><li>Компаниялар</li><li>Ишенимди жогорулатат</li></ul></div>
+    <div class="card"><h3 class="gt">Онлайн дүкөн</h3><p>Товарларыңызды каталогго салып, заказды түз сайттан аласыз.</p><ul><li>Кийим, азык-түлүк, косметика</li><li>Заказ берүү баскычы</li><li>Товарларды оңой жаңыртуу</li></ul></div>
+  </div>
+  <h2 class="gt sec" style="margin-top:56px;font-size:2rem">Кошумча</h2>
+  <div class="g2" style="margin-top:20px">
+    <div class="card"><h3 class="gt">Эски сайтты жаңылоо</h3><p>Сайтыңыз бар, бирок эскирдиби? Телефонго ылайыктап, жаңы көрүнүш беребиз.</p></div>
+    <div class="card"><h3 class="gt">Домен жана жайгаштыруу</h3><p>Сайттын адресин тандоого жана аны интернетке чыгарууга жардам беребиз.</p></div>
+  </div>
+</section></div></div>
+
+<!-- 3 -->
+<div class="page" id="p-ishter"><div class="wrap"><section>
+  <h2 class="gt sec">Иштер</h2>
+  <p class="intro">Мына бизнестин ар кандай түрү үчүн сайт кандай көрүнүшү мүмкүн. Бул үлгүлөр, сиздики өзүнчө жасалат.</p>
+  <div class="g3">
+    <div class="card"><div class="mini"><i></i></div><h3 class="gt">Кондитерская</h3><p>Торттор, баалары жана заказ берүү баскычы. Сүрөттөр биринчи орунда.</p></div>
+    <div class="card"><div class="mini b"><i></i></div><h3 class="gt">Кийим дүкөнү</h3><p>Коллекциялар, размерлер жана WhatsApp аркылуу заказ.</p></div>
+    <div class="card"><div class="mini c"><i></i></div><h3 class="gt">Сулуулук салону</h3><p>Кызматтар, прайс жана жазылуу, бардыгы бир экранда.</p></div>
+  </div>
+  <p class="note">Өзүңүздүн чыныгы иштериңизди (сүрөт жана шилтеме) жөнөтсөк, ушул жерге коебуз.</p>
+</section></div></div>
+
+<!-- 4 -->
+<div class="page" id="p-baa"><div class="wrap"><section>
+  <h2 class="gt sec">Баалар</h2>
+  <p class="intro">Баары ачык. Эмне кирерин жана качан даяр болорун алдын ала билесиз.</p>
+  <div class="g3">
+    <div class="card"><h3 class="gt">Визитка</h3><div class="price">5 000 <small>сом</small></div><ul><li>1 барак</li><li>Телефонго ылайык дизайн</li><li>WhatsApp жана чалуу баскычтары</li><li>3 күндө даяр</li></ul></div>
+    <div class="card pop"><h3 class="gt">Бизнес</h3><div class="price">12 000 <small>сом</small></div><ul><li>5 бетке чейин</li><li>Прайс жана сүрөт галереясы</li><li>Карта жана байланыш</li><li>7 күндө даяр</li></ul></div>
+    <div class="card"><h3 class="gt">Дүкөн</h3><div class="price">25 000 <small>сом</small></div><ul><li>Товарлар каталогу</li><li>Заказ берүү</li><li>Сайтты өзүңүз жаңыртасыз</li><li>14 күндө даяр</li></ul></div>
+  </div>
+  <p class="note">Бааларды өзүңдүкүнө алмаштыр. Так баа иштин көлөмүнө жараша айтылат.</p>
+  <div style="text-align:center;margin-top:24px"><a class="btn" href="#bayla">Баасын так билүү</a></div>
+</section></div></div>
+
+<!-- 5 -->
+<div class="page" id="p-kadam"><div class="wrap"><section>
+  <h2 class="gt sec">Кантип иштейбиз</h2>
+  <p class="intro">Төрт жөнөкөй кадам. Сизден көп убакыт талап кылынбайт.</p>
+  <ol class="steps">
+    <li><div><b>Сүйлөшөбүз</b><span>Бизнесиңиз жөнүндө, кимдерге сатарыңыз жана сайтка эмне керектиги жөнүндө 10-15 мүнөт сүйлөшөбүз.</span></div></li>
+    <li><div><b>Макет көрсөтөбүз</b><span>Сайттын көрүнүшүн алдын ала көрүп, оңдоолорду айтасыз.</span></div></li>
+    <li><div><b>Сайтты жасайбыз</b><span>Тексттер, сүрөттөр жана баскычтар салынат, телефондо жана компьютерде текшерилет.</span></div></li>
+    <li><div><b>Интернетке чыгарабыз</b><span>Сайт иштей баштайт. Өзүңүз кантип жаңыртууну түшүндүрүп беребиз.</span></div></li>
+  </ol>
+</section></div></div>
+
+<!-- 6 -->
+<div class="page" id="p-suroo"><div class="wrap"><section>
+  <h2 class="gt sec">Көп берилген суроолор</h2>
+  <p class="intro">Башка суроо болсо, бизге түз жазыңыз.</p>
+  <details><summary>Сайт канча убакытта даяр болот?</summary><p>Визитка сайт 3 күндөн баштап, бизнес сайт болжол менен 7 күн, дүкөн 14 күн. Мөөнөт тексттер жана сүрөттөр канчалык тез даяр болгонуна да байланыштуу.</p></details>
+  <details><summary>Тексттерди жана сүрөттөрдү өзүм даярдашым керекпи?</summary><p>Эгер даяр болсо, жакшы. Болбосо, бизнесиңиз жөнүндө айтып бересиз, биз текстти жазууга жардам беребиз.</p></details>
+  <details><summary>Сайт телефондо жакшы көрүнөбү?</summary><p>Ооба. Сайт телефондо, планшетте жана компьютерде бирдей ыңгайлуу иштеп, көрүнөт.</p></details>
+  <details><summary>Сайт чыккандан кийин өзгөртүү киргизсем болобу?</summary><p>Болот. Баа жана тексттер сыяктуу кичи өзгөртүүлөрдү өзүңүз кылууга үйрөтөбүз, ал эми чоң өзгөртүүлөрдү биз киргизебиз.</p></details>
+  <details><summary>Кантип төлөнөт?</summary><p>Адатта, иш башталганда бир бөлүгү, сайт даяр болгондо калганы төлөнөт. Так шартты баштоодон мурун макулдашабыз.</p></details>
+</section></div></div>
+
+<!-- 7 -->
+<div class="page" id="p-bayla"><div class="wrap"><section class="contact">
+  <h2 class="gt sec">Сайт керекпи? Бизге жазыңыз</h2>
+  <p class="intro">Жазганыңыз үчүн эч нерсе төлөбөйсүз. Ишиңизге кандай сайт ылайыктуу экенин айтып беребиз.</p>
+  <a class="btn" href="https://wa.me/996000000000" rel="noopener">WhatsApp'ка жазуу</a>
+  <div class="links"><a href="https://t.me/" rel="noopener">Telegram</a><a href="tel:+996000000000">+996 000 000 000</a></div>
+  <div class="write card"><b class="gt" style="font-size:1.3rem">Эмне деп жазса болот</b>
+    <ul><li>Бизнесиңиздин аты жана ал эмне кылары</li><li>Кандай сайт каалаарыңыз (билбесеңиз, жөн эле жазыңыз)</li><li>Качан даяр болушу керек</li></ul></div>
+</section></div></div>
+</main>
+
+<footer>© 2026 САЙТ СТУДИЯ</footer>
+
+<script>
+(function(){
+  var ids=['bashky','kyzmat','ishter','baa','kadam','suroo','bayla'];
+  function show(){
+    var h=(location.hash||'').replace('#','');
+    if(ids.indexOf(h)<0)h='bashky';
+    ids.forEach(function(i){document.getElementById('p-'+i).classList.toggle('on',i===h)});
+    var links=document.querySelectorAll('#nav a');
+    for(var k=0;k<links.length;k++){
+      var on=links[k].getAttribute('href')==='#'+h;
+      links[k].classList.toggle('on',on);
+      if(on&&links[k].scrollIntoView)links[k].scrollIntoView({inline:'center',block:'nearest'});
+    }
+    window.scrollTo(0,0);
+  }
+  window.addEventListener('hashchange',show);
+  show();
+})();
+</script>
+</body>
+</html>
